@@ -1,7 +1,7 @@
-# Title: short title
-# description: a short description of what the script is about
-# input(s): what are the inputs required by the script?
-# output(s): what are the outputs created when running the script?
+# Title: Shot Charts for Players from GSW
+# description: This script includes the charts of the shots made and shots attempted for each player on the court in the 2016 season.
+# input(s): Shots attempted and shots made
+# output(s): It created charts to show the distance and position of each shot made by each player during the entire season.
 
 library(ggplot2)
 
