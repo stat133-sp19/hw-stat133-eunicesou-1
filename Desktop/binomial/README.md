@@ -1,17 +1,3 @@
----
-output:
-  github_document:
-    html_preview: false
----
-
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
-```
-
 
 ## Overview
 
