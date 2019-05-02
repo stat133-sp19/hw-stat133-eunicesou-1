@@ -1,0 +1,4 @@
+"0","male <- bodytemp[bodytemp$gender == 1, ]
+male
+"
+"0","plot(male$temperature, male$rate)"

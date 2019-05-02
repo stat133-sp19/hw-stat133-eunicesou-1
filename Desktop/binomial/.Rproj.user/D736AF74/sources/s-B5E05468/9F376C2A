@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556313667743.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "9F376C2A",
+    "lastKnownWriteTime" : 1556257001,
+    "last_content_update" : 1556257001,
+    "path" : "~/Desktop/binomial/tests/testthat/test_aux.R",
+    "project_path" : "tests/testthat/test_aux.R",
+    "properties" : {
+        "cursorPosition" : "11,27",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

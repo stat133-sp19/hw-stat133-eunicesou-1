@@ -1,0 +1,101 @@
+---
+title: "Binomial Functions"
+author: "Eunice Sou"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to binomial functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+library(binomial)
+```
+
+## Binomial Distribution Package Overview
+
+The package "binomial" implements functions for calculating probabilities of a Binomial random variable, and related calculations such as the probability distribution, the expected value, variance, etc. It also provides some visualizations and summary for the binomial distribution.
+
+## Getting Started
+
+First, load the package with the following command in the console.
+```{r}
+library(binomial)
+```
+
+There are a few _main_ functions for direct use.  
+1. `bin_choose` calculates the number of combinations to get `k` successes from `n` trials.
+
+```{r}
+bin_choose(trials = 10, success = 5)
+```
+
+2. `bin_probability` calculates the probability of getting `k` successes from `trials` with success probability `prob`.
+
+```{r}
+bin_probability(success = 5, trials = 10, prob =0.5)
+```
+
+3. `bin_distribution` displays a data frame containing the probability distribution information. You can also bar plot of the distribution with `plot()` method.
+
+```{r}
+dis1 <- bin_distribution(trials = 5, prob = 0.5)
+dis1
+plot(dis1)
+```
+
+4. `bin_cumulative` extends `bin_distribution` by another column, containing the cumulative distribution for binomial variables. You can also plot the cumulative distribution with `plot()` method.
+
+```{r}
+dis2 <- bin_cumulative(trials = 5, prob = 0.5)
+dis2
+plot(dis2)
+```
+
+5. `bin_variable` creates a binomial variable object. You can get some summary statistics using `summary()` method.
+
+```{r}
+bin_var <- bin_variable(trials = 5, prob = 0.5)
+bin_var
+```
+
+```{r}
+var_summary <- summary(bin_var)
+var_summary
+```
+
+There are five summary statistics supported by this package:
+
+Assume a random variable $X$ follows $Bin(n, p)$ distribution.
+
+- Mean $E(X) = np$
+- Variance $Var(X) = np(1-p)$
+- Mode $Mode(X) = int(np + p)$
+- Skewness $skewness = \frac{1 - 2p}{\sqrt{np(1-p)}}$
+- Kurtosis $kurtosis = \frac{1 - 6p(1 - p)}{np(1 - p)}$
+
+6. You can calculates each summary statistic independently by calling the corresponding functions with number of trials and probability of success.
+
+```{r}
+bin_mean(trials = 5, prob = 0.5)
+bin_variance(trials = 5, prob = 0.5)
+bin_mode(trials = 5, prob = 0.5)
+bin_skewness(trials = 5, prob = 0.5)
+bin_kurtosis(trials = 5, prob = 0.5)
+```
+
+All _main_ functions mentioned above are internally supported by _private_ auxilary functions that do all actual computations. These functions are NOT intended to be called directly by the user.
+
+## Getting Help
+
+If you need additional help with functions in the package, please consult documentations for concrete explanantions and examples.
+
+For example, if you would like to know more about calculating binomial probabilities using bin_probability(), use one of the following two ways to get help:
+
+```{r eval=FALSE}
+?bin_probability
+help(bin_probability)
+```
+
